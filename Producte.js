@@ -1,6 +1,9 @@
 
-db.createCollection( 'Producte', {validator: {$jsonSchema: {bsonType: 'object',title:'Producte',required: [         'Marca',          'Graduació_Vidres',          'Muntura',          'Color_Muntura',          'Color_vidre',          'Preu'],properties: {Marca: {bsonType: 'object',
-title:'Marcas',required: [         'id',          'Nombre',          'Producte',          'Proveïdor'],properties: {id: {bsonType: 'objectId'},Nombre: {bsonType: 'string'},Producte: {bsonType: 'objectId'},Proveïdor: {bsonType: 'objectId'}}},Graduació_Vidres: {bsonType: 'string'},Muntura: {bsonType: 'string'},Color_Muntura: {bsonType: 'string'},Color_vidre: {bsonType: 'string'},Preu: {bsonType: 'string'}}         }      }});  
+db.createCollection( 'Producte', {validator: {$jsonSchema: {bsonType: 'object',title:'Producte',required: [         'id',          'Pizza',          'Hamburguesa',          'Beguda',          'Empleat'],properties: {id: {bsonType: 'objectId'},Pizza: {bsonType: 'object',
+title:'Producte.pizza',required: [         'Categoria'],properties: {Categoria: {bsonType: 'object',
+title:'Categoria.pizza',required: [         'id pizza',          'Nom',          'Descripcio',          'Imatge',          'Preu'],properties: {id pizza: {bsonType: 'int'},Nom: {bsonType: 'string'},Descripcio: {bsonType: 'string'},Imatge: {bsonType: 'string'},Preu: {bsonType: 'double'}}}}},Hamburguesa: {bsonType: 'object',
+title:'Producte.Hamburguesa',required: [         'id Hamburguesa',          'Nom',          'Descripcio',          'Imatge',          'Preu'],properties: {id Hamburguesa: {bsonType: 'int'},Nom: {bsonType: 'string'},Descripcio: {bsonType: 'string'},Imatge: {bsonType: 'string'},Preu: {bsonType: 'double'}}},Beguda: {bsonType: 'object',
+title:'Producte.Beguda',required: [         'id Hamburguesa',          'Nom',          'Descripcio',          'Imatge',          'Preu'],properties: {id Hamburguesa: {bsonType: 'int'},Nom: {bsonType: 'string'},Descripcio: {bsonType: 'string'},Imatge: {bsonType: 'string'},Preu: {bsonType: 'double'}}},Empleat: {bsonType: 'objectId'}}         }      }});  
  db.Producte.createIndex(
 {
   "_id": 1
